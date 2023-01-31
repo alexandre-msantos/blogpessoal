@@ -24,9 +24,18 @@ public class PostagemResource {
         return ResponseEntity.ok().body(list);
     }
 
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<Postagem> getById(@PathVariable Long id){
+        return postagemRepository.findById(id)
+                .map(resposta -> ResponseEntity.ok(resposta))
+                .orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).build());
+    }
+
     @PostMapping
     public ResponseEntity<Postagem> post(@Valid @RequestBody Postagem postagem){
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(postagemRepository.save(postagem));
     }
+
+
 }
