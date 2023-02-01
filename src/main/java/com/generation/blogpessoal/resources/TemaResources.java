@@ -2,6 +2,7 @@ package com.generation.blogpessoal.resources;
 
 import com.generation.blogpessoal.model.Tema;
 import com.generation.blogpessoal.repositories.TemaRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,4 +35,8 @@ public class TemaResources {
         return ResponseEntity.ok(temaRepository.findAllByDescricaoContainingIgnoreCase(descricao));
     }
 
+    @PostMapping
+    public ResponseEntity<Tema> post(@Valid @RequestBody Tema tema){
+        return ResponseEntity.status(HttpStatus.CREATED).body(temaRepository.save(tema));
+    }
 }
