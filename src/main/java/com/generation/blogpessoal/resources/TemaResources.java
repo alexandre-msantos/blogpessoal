@@ -47,4 +47,11 @@ public class TemaResources {
                         .body(temaRepository.save(tema)))
                  .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id){
+        getById(id);
+        temaRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
 }
