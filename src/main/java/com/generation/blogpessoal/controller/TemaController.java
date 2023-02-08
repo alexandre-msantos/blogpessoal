@@ -1,4 +1,4 @@
-package com.generation.blogpessoal.resources;
+package com.generation.blogpessoal.controller;
 
 import com.generation.blogpessoal.model.Tema;
 import com.generation.blogpessoal.repositories.TemaRepository;
@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/temas")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-public class TemaResources {
+public class TemaController {
 
     @Autowired
     private TemaRepository temaRepository;

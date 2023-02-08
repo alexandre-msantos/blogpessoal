@@ -1,4 +1,4 @@
-package com.generation.blogpessoal.resources;
+package com.generation.blogpessoal.controller;
 
 import com.generation.blogpessoal.model.Usuario;
 import com.generation.blogpessoal.model.UsuarioLogin;
@@ -16,7 +16,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/usuarios")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-public class UsuarioResource {
+public class UsuarioController {
 
     @Autowired
     private UsuarioService usuarioService;
