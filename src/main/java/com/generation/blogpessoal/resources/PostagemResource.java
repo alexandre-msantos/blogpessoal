@@ -30,7 +30,7 @@ public class PostagemResource {
     public ResponseEntity<Postagem> getById(@PathVariable Long id){
         return postagemRepository.findById(id)
                 .map(resposta -> ResponseEntity.ok(resposta))
-                .orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).build());
+                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
 
     @GetMapping("/titulo/{titulo}")
