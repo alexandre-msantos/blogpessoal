@@ -36,7 +36,6 @@ public class Postagem {
     private Usuario usuario;
 
 
-
     public Long getId() {
         return id;
     }
